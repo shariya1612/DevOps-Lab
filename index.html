@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Registration</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightblue;
+            text-align: center;
+        }
+
+        form {
+            background-color: white;
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input, select {
+            width: 90%;
+            padding: 8px;
+            margin: 8px;
+        }
+
+        button {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form onsubmit="register(event)">
+
+        <h2>Event Registration Form</h2>
+
+        <input type="text" id="name" placeholder="Enter Name" required>
+
+        <input type="email" id="email" placeholder="Enter Email" required>
+
+        <input type="tel" id="phone" placeholder="Enter Phone Number" required>
+
+        <select id="event" required>
+            <option value="">Select Event</option>
+            <option>Technical Event</option>
+            <option>Cultural Event</option>
+            <option>Sports Event</option>
+        </select>
+
+        <button type="submit">Register</button>
+
+        <p id="message"></p>
+
+    </form>
+
+    <script>
+        function register(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+
+            document.getElementById("message").innerHTML =
+                "Registration Successful! Welcome " + name;
+        }
+    </script>
+
+</body>
+</html>
